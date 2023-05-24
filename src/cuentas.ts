@@ -6,8 +6,6 @@ class Cuenta {
   constructor(titular: string, cantidad: number = 0) {
     this.titular = titular
     this.cantidad = cantidad
-
-    console.log("creado cuenta")
   }
 
   ingresar(cantidadIngresar: number): number {
