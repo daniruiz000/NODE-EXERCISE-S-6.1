@@ -28,20 +28,15 @@ class Casa {
   }
 
   comprar(compradores: Persona[]): void {
-    let dineroTotal = 0
-
-    // Calcula la suma del dinero disponible de todos los compradores
-    for (const comprador of compradores) {
-      dineroTotal += comprador.dineroDisponible
-    }
+    const dineroTotal = compradores.reduce((acumulador, comprador) => {
+      return acumulador + comprador.dineroDisponible;
+    }, 0);
 
     if (dineroTotal >= this.precio) {
       const precioPorComprador = this.precio / compradores.length
-
-      // Descuenta el precio de la casa dividido entre la cantidad de compradores del dinero disponible de cada comprador
-      for (const comprador of compradores) {
-        comprador.dineroDisponible -= precioPorComprador
-      }
+      compradores.forEach(comprador => {
+        comprador.dineroDisponible -= precioPorComprador;
+      });
 
       console.log("Casa comprada!")
     } else {
