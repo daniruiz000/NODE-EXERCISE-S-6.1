@@ -8,7 +8,7 @@ class Cuenta {
     this.cantidad = cantidad
   }
 
-  ingresar(cantidadIngresar: number): number {
+  public ingresar(cantidadIngresar: number): number {
     if (cantidadIngresar < 0) {
       console.log(`------------------------
 ERROR: La cantidad introducida es negativa 
@@ -19,7 +19,7 @@ ERROR: La cantidad introducida es negativa
     return this.cantidad
   }
 
-  retirar(cantidadRetirar: number): number {
+  public retirar(cantidadRetirar: number): number {
     if (cantidadRetirar > this.cantidad) {
       console.log(`------------------------
 ERROR: No tienes dinero suficiente para retirar esa cantidad
@@ -31,7 +31,7 @@ ERROR: No tienes dinero suficiente para retirar esa cantidad
     return this.cantidad
   }
 
-  mostrar(): void {
+  public mostrar(): void {
     console.log(
         `--------------------------
 Datos de la cuenta:
